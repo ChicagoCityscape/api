@@ -5,8 +5,16 @@ In private beta.
 ## Notes
 
 * A parcel that appears in the ````parcels_other```` property may also appear in the ````parcels_intersecting```` property if its attribute ````intersects```` is ````1````.
+* Addresses work best when provided like ````121 N LaSalle St```` (the API is case-insensitive).
 
 ## Sample response
+
+Fetch a response by using this query on the API:
+````
+?lat=41.887542&lng=-87.624407&address=333 N Michigan Ave&city=Chicago
+````
+
+This will return:
 
 ````
 {
