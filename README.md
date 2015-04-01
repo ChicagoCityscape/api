@@ -551,7 +551,6 @@ If you use just ````psql```` or a GUI PostgreSQL client, then we can return the 
 ````
 SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)
 ````
-The query finished in 0.23 seconds for me. 
 1. Now, use these ````ogr2ogr```` command on your local machine (from the working directory where you want the output saved) to output that query's results as different geographic files (KML, GeoJSON, and ESRI Shapefile) using our [ogr2ogr cheat sheet](https://github.com/chicagocityscape/tod-data). 
 ````
 ogr2ogr -f GeoJSON selected_pins.geojson PG:"host=localhost port='5432' dbname='database' user='username' password='password'" -sql "SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)" -t_srs "epsg:4326"
