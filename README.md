@@ -5,15 +5,24 @@ In private beta.
 ## Notes
 
 * A parcel that appears in the ````parcels_other```` property may also appear in the ````parcels_intersecting```` property if its attribute ````intersects```` is ````1````.
-* Addresses work best when provided like ````121 N LaSalle St```` (the API is case-insensitive).
 
-## Sample response
+## Sample request
 
 Fetch a response by using this query on the API:
 ````
 ?lat=41.887542&lng=-87.624407&address=333 N Michigan Ave&city=Chicago
 ````
 
+### Fields
+* lat. Latitude in 4326 projection (required)
+* lng. Longitude in 4326 projection (required)
+* address. A fully-formed address in Cook County (optional); preferred syntax is ````121 N LaSalle St```` (the API is case-insensitive)
+* city. The name of a city in Cook County (optional but required if address provided)
+* state. Only "IL" and "Illinois" work (optional)
+
+If address and city are absent, the system will reverse geocode the coordinates to find an address; the ````reverse_geocoded```` property will be ````true````.
+
+## Sample response
 This will return:
 
 ````
