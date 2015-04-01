@@ -537,3 +537,26 @@ This will return:
     }
 }
 ````
+
+## Creating a subset of parcels
+
+Let's say we don't want to show all parcels on a map, but just the ones represented by a list of PINs (Property Index Numbers). Provided we have the [Cook County parcel shapefile from 2012](https://datacatalog.cookcountyil.gov/GIS-Maps/ccgisdata-Parcel-2012/e62c-6rz8) in our PostGIS database, and a list of PINs, we can easily write a single query that will output the shapes for just our selected PINs.
+
+### Output
+If you use just ````psql```` or a GUI PostgreSQL client, then we can return the shapes in a table with one field containing the GeoJSON string for each individual shape. To output all of the shapes in a single file (like a shapefile, KML, or GeoJSON file) we'll have to use ````ogr2ogr````. 
+
+### Procedures
+1. First import your list of PINs into a new table in the same database as the Cook County parcel shapefile. 
+1. Run and test a query like this, changing the table names to match yours: 
+````
+SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)
+````
+The query finished in 0.23 seconds for me. 
+1. Now, use these ````ogr2ogr```` command on your local machine (from the working directory where you want the output saved) to output that query's results as different geographic files (KML, GeoJSON, and ESRI Shapefile) using our [ogr2ogr cheat sheet](https://github.com/chicagocityscape/tod-data). 
+````
+ogr2ogr -f GeoJSON selected_pins.geojson PG:"host=localhost port='5432' dbname='database' user='username' password='password'" -sql "SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)" -t_srs "epsg:4326"
+
+ogr2ogr -f KML selected_pins.kml PG:"host=localhost port='5432' dbname='database' user='username' password='password'" -sql "SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)" -t_srs "epsg:4326"
+
+ogr2ogr -f "ESRI Shapefile" selected_pins.shp PG:"host=localhost port='5432' dbname='database' user='username' password='password'" -sql "SELECT * FROM parcel WHERE pin14 in (SELECT pin14 FROM selected_pins)" -t_srs "epsg:4326"
+````
