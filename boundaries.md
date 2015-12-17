@@ -1,7 +1,7 @@
 # Chicago Cityscape API
 
 ## Place boundary endpoints
-The API will return the boundaries as GeoJSON for any one of our 2,100 "Places", which includes neighborhoods, community areas, wards, and custom drawn areas like neighborhood associations. 
+The API will return the boundaries as GeoJSON for any one of our [2,100 "Places"](http://www.chicagocityscape.com/places.php), which includes neighborhoods, community areas, wards, and custom drawn areas like neighborhood associations. 
 
 ### "List all places" endpoint
 Get a list of all the possible places for which you can get boundaries. 
