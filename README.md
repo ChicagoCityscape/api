@@ -8,6 +8,8 @@ The Chicago Cityscape API returns data about an address or PIN in Cook County, I
 http://tod.chicagocityscape.com/tod/index.php
 ````
 
+We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and more. 
+
 ## Sample request
 
 Fetch a response by using this query on the API:
