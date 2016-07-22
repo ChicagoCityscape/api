@@ -17,13 +17,13 @@ http://tod.chicagocityscape.com/tod/index.php?address=333 N Michigan Ave&city=Ch
 
 ## Parameters
 
-Parameters to find the address or PIN are grouped. 
+The parameters you must provide are grouped. Only one group of parameter(s) is necessary. 
 
 ### Group 1 - PIN
 Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
 
 ### Group 2 - Full address string
-Use `query` and a full address (like `121 N La Salle St, Chicago, IL`) and the API will geocode it. 
+Use `query` and a full address (like `121 N La Salle St, Chicago, IL`) and the API will geocode it. If this parameter is provided, all other parameters will be ignored.
 
 ### Group 3 - Address parts 
 Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `city` is empty or not provided, the API will assume `Chicago`. If `state` is empty or not provided, the API will assume `IL` (Illinois). 
@@ -34,6 +34,7 @@ Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `ci
 ## Notes
 
 * A parcel that appears in the ````parcels_other```` property may also appear in the ````parcels_intersecting```` property if its attribute ````intersects```` is ````1````.
+* Responses are cached for one hour.
 
 ## Sample response
 This will return valid GeoJSON, with a single geometry representing the location of the requested address, or the centroid of the requested PIN:
