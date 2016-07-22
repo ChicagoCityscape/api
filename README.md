@@ -5,7 +5,7 @@ The Chicago Cityscape API returns data about an address or PIN in Cook County, I
 ## Endpoint
 
 ````
-https://www.chicagocityscape.com/tod/index.php
+https://www.chicagocityscape.com/api/index.php
 ````
 
 We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and more. 
@@ -14,7 +14,7 @@ We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCitysc
 
 Fetch a response by using this query on the API:
 ````
-https://www.chicagocityscape.com/tod/index.php?address=333 N Michigan Ave&city=Chicago&state=IL
+https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL
 ````
 
 ## Parameters
