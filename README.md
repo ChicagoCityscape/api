@@ -2,6 +2,8 @@
 
 The Chicago Cityscape API returns data about an address or PIN in Cook County, Illinois. Returned data includes zoning districts for Chicago properties, ward, community area, state legislative districts, school attendance boundaries, and nearby train station entrances. 
 
+Using the API requires a `key` which is available to all Pro members and can be found on your [Account](http://chicagocityscape.com/account.php) page.
+
 ## Endpoint
 
 ````
@@ -14,12 +16,12 @@ We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCitysc
 
 Fetch a response by using this query on the API:
 ````
-https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL
+https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL&key=XXX
 ````
 
 ## Parameters
 
-The parameters you must provide are grouped. Only one group of parameter(s) is necessary. 
+The parameters you must provide are grouped. Only one group of parameter(s) is necessary, plus a valid `key`. 
 
 ### Group 1 - PIN
 Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
