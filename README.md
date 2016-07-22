@@ -5,7 +5,7 @@ The Chicago Cityscape API returns data about an address or PIN in Cook County, I
 ## Endpoint
 
 ````
-http://tod.chicagocityscape.com/tod/index.php?[parameter=]
+http://tod.chicagocityscape.com/tod/index.php
 ````
 
 ## Sample request
@@ -19,17 +19,17 @@ http://tod.chicagocityscape.com/tod/index.php?address=333 N Michigan Ave&city=Ch
 
 Parameters to find the address or PIN are grouped. 
 
-### Group 4 - Coordinate
-`lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded. 
+### Group 1 - PIN
+Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
 
 ### Group 2 - Full address string
 Use `query` and a full address (like `121 N La Salle St, Chicago, IL`) and the API will geocode it. 
 
-### Group 1 - PIN
-Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
-
 ### Group 3 - Address parts 
 Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `city` is empty or not provided, the API will assume `Chicago`. If `state` is empty or not provided, the API will assume `IL` (Illinois). 
+
+### Group 4 - Coordinate
+`lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded. 
 
 ## Notes
 
