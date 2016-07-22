@@ -1,29 +1,42 @@
 # Chicago Cityscape API
 
-In private beta. 
+The Chicago Cityscape API returns data about an address or PIN in Cook County, Illinois. Returned data includes zoning districts for Chicago properties, ward, community area, state legislative districts, school attendance boundaries, and nearby train station entrances. 
 
-## Notes
+## Endpoint
 
-* A parcel that appears in the ````parcels_other```` property may also appear in the ````parcels_intersecting```` property if its attribute ````intersects```` is ````1````.
+````
+http://tod.chicagocityscape.com/tod/index.php?[parameter=]
+````
 
 ## Sample request
 
 Fetch a response by using this query on the API:
 ````
-?lat=41.887542&lng=-87.624407&address=333 N Michigan Ave&city=Chicago
+http://tod.chicagocityscape.com/tod/index.php?address=333 N Michigan Ave&city=Chicago&state=IL
 ````
 
-### Fields
-* lat. Latitude in 4326 projection (required)
-* lng. Longitude in 4326 projection (required)
-* address. A fully-formed address in Cook County (optional); preferred syntax is ````121 N LaSalle St```` (the API is case-insensitive)
-* city. The name of a city in Cook County (optional but required if address provided)
-* state. Only "IL" and "Illinois" work (optional)
+## Parameters
 
-If address and city are absent, the system will reverse geocode the coordinates to find an address; the ````reverse_geocoded```` property will be ````true````.
+Parameters to find the address or PIN are grouped. 
+
+### Group 4 - Coordinate
+`lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded. 
+
+### Group 2 - Full address string
+Use `query` and a full address (like `121 N La Salle St, Chicago, IL`) and the API will geocode it. 
+
+### Group 1 - PIN
+Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
+
+### Group 3 - Address parts 
+Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `city` is empty or not provided, the API will assume `Chicago`. If `state` is empty or not provided, the API will assume `IL` (Illinois). 
+
+## Notes
+
+* A parcel that appears in the ````parcels_other```` property may also appear in the ````parcels_intersecting```` property if its attribute ````intersects```` is ````1````.
 
 ## Sample response
-This will return:
+This will return valid GeoJSON, with a single geometry representing the location of the requested address, or the centroid of the requested PIN:
 
 ````
 {
