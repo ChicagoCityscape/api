@@ -384,6 +384,8 @@ The API will return a GeoJSON dataset of Cook County parcels near or within a sp
 | radius         | A number in feet that’s equal to or less than 15,840 feet (3 miles).                                                                                                                                                           |
 ### Sample response
 
+Visualize this GeoJSON on http://geojson.io
+
 ````
 {
   "count": 4,
