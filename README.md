@@ -376,8 +376,9 @@ This will return valid GeoJSON, with a single geometry representing the location
 
 The API will return a GeoJSON dataset of Cook County parcels near or within a specific geography. You can provide either a (1) bounding box, or (2) a latitude/longitude coordinate and radius. 
 
-| bounds_geojson | GeoJSON polygon that will be compared against the database of parcels. Must be in the WGS84 coordinate reference system. This was designed to be used with Leaflet, which can generate a bounding box of the current map view. |
+| parameter      | description                                                                                                                                                                                                                    |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bounds_geojson | GeoJSON polygon that will be compared against the database of parcels. Must be in the WGS84 coordinate reference system. This was designed to be used with Leaflet, which can generate a bounding box of the current map view. |
 | lat            | Latitude (x) coordinate                                                                                                                                                                                                        |
 | lng            | Longitude (y) coordinate                                                                                                                                                                                                       |
 | radius         | A number in feet that’s equal to or less than 15,840 feet (3 miles).                                                                                                                                                           |
