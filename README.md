@@ -4,7 +4,7 @@ The Chicago Cityscape API returns data about an address or PIN in Cook County, I
 
 Using the API requires a `key` which is available to all Pro members and can be found on your [Account](http://chicagocityscape.com/account.php) page.
 
-## 2 Endpoints
+## 3 Endpoints
 
 ### TOD API 
 This API returns information relevant to determining a Chicago address or property's eligibility for transit-oriented development (also called transit-served location) parking minimum reductions and density bonuses.
@@ -18,7 +18,8 @@ This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within
 https://www.chicagocityscape.com/api/parcels.php
 ````
 
-We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and more. 
+### Boundaries API 
+Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
 
 ## Sample requests
 
