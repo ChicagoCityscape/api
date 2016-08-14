@@ -4,22 +4,35 @@ The Chicago Cityscape API returns data about an address or PIN in Cook County, I
 
 Using the API requires a `key` which is available to all Pro members and can be found on your [Account](http://chicagocityscape.com/account.php) page.
 
-## Endpoint
+## Endpoints
 
+*TOD* API - returns information relevant to determining a Chicago address or property's eligibility for transit-oriented development (also called transit-served location) parking minimum reductions and density bonuses.
 ````
 https://www.chicagocityscape.com/api/index.php
 ````
 
+*Parcels* API - returns a GeoJSON dataset of Cook County parcels within a radius (in feet) of a WGS84 geographic coordinate, or inside a bounding box passed to the API as a GeoJSON polygon.
+````
+https://www.chicagocityscape.com/api/parcels.php
+````
+
 We have another endpoint: [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and more. 
 
-## Sample request
+## Sample requests
 
-Fetch a response by using this query on the API:
+Fetch a response by using this query on the TOD API:
 ````
 https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL&key=XXX
 ````
 
+And on the Parcels API:
+````
+https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&radius=660&debug=&key=XXX
+````
+
 ## Parameters
+
+### TOD API Parameters
 
 The parameters you must provide are grouped. Only one group of parameter(s) is necessary, plus a valid `key`. 
 
@@ -357,3 +370,12 @@ This will return valid GeoJSON, with a single geometry representing the location
     }
 }
 ````
+### Parcels API parameters
+
+The API will return a GeoJSON dataset of Cook County parcels near or within a specific geography. You can provide either a (1) bounding box, or (2) a latitude/longitude coordinate and radius. 
+
+| bounds_geojson | GeoJSON polygon that will be compared against the database of parcels. Must be in the WGS84 coordinate reference system. This was designed to be used with Leaflet, which can generate a bounding box of the current map view. |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| lat            | Latitude (x) coordinate                                                                                                                                                                                                        |
+| lng            | Longitude (y) coordinate                                                                                                                                                                                                       |
+| radius         | A number in feet that’s equal to or less than 15,840 feet (3 miles).                                                                                                                                                           |
