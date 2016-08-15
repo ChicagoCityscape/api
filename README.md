@@ -30,7 +30,7 @@ https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=C
 
 And on the Parcels API:
 ````
-https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&radius=660&debug=&key=XXX
+https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&radius=660&key=XXX
 ````
 
 ## Details about the TOD API
