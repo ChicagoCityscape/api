@@ -377,14 +377,16 @@ This will return valid GeoJSON, with a single geometry representing the location
 
 ### Parameters
 
-The API will return a GeoJSON dataset of Cook County parcels (2015 tax year) near or within a specific geography. You can provide either a (1) bounding box, or (2) a latitude/longitude coordinate and radius. 
+The API will return a GeoJSON dataset of Cook County parcels (2015 tax year) near or within a specific geography. You must provide either a (1) bounding box in GeoJSON, (2) a latitude/longitude coordinate and radius, or (3) a Place slug. 
 
-| parameter      | description                                                                                                                                                                                                                    |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bounds_geojson | GeoJSON polygon that will be compared against the database of parcels. Must be in the WGS84 coordinate reference system. This was designed to be used with Leaflet, which can generate a bounding box of the current map view. |
-| lat            | Latitude (x) coordinate                                                                                                                                                                                                        |
-| lng            | Longitude (y) coordinate                                                                                                                                                                                                       |
-| radius         | A number in feet that’s equal to or less than 15,840 feet (3 miles).                                                                                                                                                           |
+| parameter      | description                                                                                                                                                                                                                              |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bounds_geojson | Optional. GeoJSON polygon that will be compared against the database of parcels. Must be in the WGS84 coordinate reference system. This was designed to be used with Leaflet, which can generate a bounding box of the current map view. |
+| lat            | Optional. Latitude (x) coordinate (required if `lng` is provided)                                                                                                                                                                        |
+| lng            | Optional. Longitude (y) coordinate (required if `lat` is provided)                                                                                                                                                                       |
+| radius         | Optional. A number in feet that’s equal to or less than 15,840 feet (3 miles).                                                                                                                                                           |
+| slug           | Optional. The slug for one of our 2,800 Places. Example: `communityarea-avondale`. Can be used in combination with `radius`.                                                                                                             |
+| include_taxes  | Optional. Set this to `true` to return tax history and tax bill recipient information (this drastically increases the size of the response).                                                                                             |
 ### Sample response
 
 Visualize this GeoJSON on http://geojson.io
