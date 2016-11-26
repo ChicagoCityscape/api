@@ -13,7 +13,7 @@ https://www.chicagocityscape.com/api/index.php
 ````
 
 ### Parcels API
-This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within a radius (in feet) of a WGS84 geographic coordinate, or inside a bounding box passed to the API as a GeoJSON polygon.
+This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within a radius (in feet) of a WGS84 geographic coordinate, inside a bounding box passed to the API as a GeoJSON polygon, or inside or within a radius (in feet) of one of our 2,800 Places (using the `slug` parameter). 
 ````
 https://www.chicagocityscape.com/api/parcels.php
 ````
