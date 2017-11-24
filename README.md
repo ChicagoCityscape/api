@@ -6,19 +6,19 @@ Using the API requires a `key` which is available to all Pro members and can be 
 
 ## 3 Endpoints
 
-### TOD API 
+### 1. TOD API 
 This API returns information relevant to determining a Chicago address or property's eligibility for transit-oriented development (also called transit-served location) parking minimum reductions and density bonuses.
 ````
 https://www.chicagocityscape.com/api/index.php
 ````
 
-### Parcels API
+### 2. Parcels API
 This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within a radius (in feet) of a WGS84 geographic coordinate, inside a bounding box passed to the API as a GeoJSON polygon, or inside or within a radius (in feet) of one of our 2,800 Places (using the `slug` parameter). 
 ````
 https://www.chicagocityscape.com/api/parcels.php
 ````
 
-### Boundaries API 
+### 3. Boundaries API 
 Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
 
 ## Sample requests
