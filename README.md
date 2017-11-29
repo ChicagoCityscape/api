@@ -1,6 +1,6 @@
 # Chicago Cityscape API
 
-The Chicago Cityscape API returns data about an address or PIN in Cook County, Illinois. Returned data includes zoning districts for Chicago properties, ward, community area, state legislative districts, school attendance boundaries, and nearby train station entrances. 
+The Chicago Cityscape API returns data about an address in Illinois or a Property Index Number (PIN) in Cook County, Illinois. Returned data can including information about elected officials, TIF districts, nearby CTA & Metra stations, and potential financial incentives for that address or PIN. The most information is returned for Chicago addresses. 
 
 Using the API requires a `key` which is available to all Pro members and can be found on your [Account](http://chicagocityscape.com/account.php) page.
 
