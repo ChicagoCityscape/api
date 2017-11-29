@@ -7,9 +7,20 @@ Using the API requires a `key` which is available to all Pro members and can be 
 ## 3 Endpoints
 
 ### 1. TOD API 
-This API returns information relevant to determining a Chicago address or property's eligibility for transit-oriented development (also called transit-served location) parking minimum reductions and density bonuses.
+The "TOD API" returns the same information that you get in an [Address Snapshot Report](http://chicagocityscape.com/address.php).
 ````
 https://www.chicagocityscape.com/api/index.php
+````
+
+#### Sample API calls
+Get a response for an address in Chicago. If the API call doesn't have coordinates, the API will automatically geocode the address. Provide coordinates using `lat` and `lng` parameters (this will also marginally speed up the response).
+````
+https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL&key=XXX
+````
+
+Get a response for a PIN in Cook County. If the PIN is found but doesn't have a record in the Cook County Parcel 2015 GIS layer, then the PIN is geocoded. 
+````
+https://www.chicagocityscape.com/api/index.php?pin=13364210400000&key=XXX
 ````
 
 ### 2. Parcels API
@@ -18,20 +29,13 @@ This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within
 https://www.chicagocityscape.com/api/parcels.php
 ````
 
-### 3. Boundaries API 
-Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
-
-## Sample requests
-
-Fetch a response by using this query on the TOD API:
-````
-https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL&key=XXX
-````
-
-And on the Parcels API:
+#### Sample API calls
 ````
 https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&radius=660&key=XXX
 ````
+
+### 3. Boundaries API 
+Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
 
 ## Details about the TOD API
 
@@ -50,6 +54,9 @@ Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `ci
 
 #### Group 4 - Coordinate
 `lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded. 
+
+#### Group 5 - Combination
+You can supply any of the above parameters in combination, however, one complete group is necessary.
 
 ### Notes
 
