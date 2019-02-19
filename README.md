@@ -87,9 +87,8 @@ This will return valid GeoJSON, with a single geometry representing the location
             "pin": null
         },
         "parcels_intersecting": [],
-        "parcels_other": [
+        "parcels_address": [
             {
-                "requested_address": "333 N Michigan Ave",
                 "pin": "17103010030000",
                 "address": "333 N MICHIGAN AVE",
                 "distance_to_centroid": "90.07",
@@ -102,7 +101,6 @@ This will return valid GeoJSON, with a single geometry representing the location
                 "description": "Commercial building over three stories"
             },
             {
-                "requested_address": "333 N Michigan Ave",
                 "pin": "17103010010000",
                 "address": "333 N MICHIGAN AVE",
                 "distance_to_centroid": "126.16",
@@ -115,6 +113,7 @@ This will return valid GeoJSON, with a single geometry representing the location
                 "description": "Commercial building over three stories"
             }
         ],
+        "parcels_other": [],
         "aro": [
             {
                 "geoid": "17031320100",
