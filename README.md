@@ -18,20 +18,33 @@ Get a response for an address in Chicago. If the API call doesn't have coordinat
 https://www.chicagocityscape.com/api/index.php?address=333 N Michigan Ave&city=Chicago&state=IL&key=XXX
 ````
 
-Get a response for a PIN in Cook County. If the PIN is found but doesn't have a record in the Cook County Parcel 2015 GIS layer, then the PIN is geocoded. 
+Get a response for a PIN in Cook County. If the PIN is found but doesn't have a record in the Cook County Parcel 2019 GIS layer, then the PIN is geocoded. 
 ````
 https://www.chicagocityscape.com/api/index.php?pin=13364210400000&key=XXX
 ````
 
 ### 2. Parcels API
-This API returns a GeoJSON dataset of Cook County parcels (2015 tax year) within a radius (in feet) of a WGS84 geographic coordinate, inside a bounding box passed to the API as a GeoJSON polygon, or inside or within a radius (in feet) of one of our 2,800 Places (using the `slug` parameter). 
+This API returns a GeoJSON dataset of Cook County parcels (2018 tax year) within a radius (in feet) of a WGS84 geographic coordinate, inside a bounding box passed to the API as a GeoJSON polygon, or inside or within a radius (in feet) of one of our 37,000+ Places (using the `slug` parameter). 
 ````
+/* The endpoint URL...*/
 https://www.chicagocityscape.com/api/parcels.php
 ````
 
 #### Sample API calls
+
 ````
+/* Get a GeoJSON string of all Cook County parcels within 660 feet (1/8th mile) of the given coordinate */
 https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&radius=660&key=XXX
+````
+
+````
+/* Get a GeoJSON string of all Cook County parcels within 660 feet (1/8th mile) of the given coordinate that are 2-6 unit apartment buildings (which is represented by the property_class of "2-11") */
+https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&property_class=2-11&radius=660&key=XXX
+````
+
+````
+/* Get a GeoJSON string of all Cook County parcels inside the Logan Square community area */
+https://www.chicagocityscape.com/api/parcels.php?place=communityarea-logan-square&key=XXX
 ````
 
 ### 3. Boundaries API 
