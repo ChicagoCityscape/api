@@ -12,6 +12,8 @@ The "TOD API" returns the same information that you get in an [Address Snapshot 
 https://www.chicagocityscape.com/api/index.php
 ````
 
+See "Details about the TOD API" below to see which parameters are required and which parameters are optional.
+
 #### Sample API calls
 Get a response for an address in Chicago. If the API call doesn't have coordinates, the API will automatically geocode the address. Provide coordinates using `lat` and `lng` parameters (this will also marginally speed up the response).
 ````
@@ -54,22 +56,25 @@ Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/
 
 ### TOD API Parameters
 
-The parameters you must provide are grouped. Only one group of parameter(s) is necessary, plus a valid `key`. 
+The parameters you must provide are grouped. A valid `key` parameter + parameters in Group 1, 2, 3, or 4 are required (Groups 1-4 help us locate the address or property you're seeking, and only one group is required). 
 
 #### Group 1 - PIN
-Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. If this parameter is provided, all other parameters will be ignored. 
+Send a Cook County `pin` (14 digits, and it may begin with `0`) and the API will try to locate it in the parcels database. 
 
 #### Group 2 - Full address string
-Use `query` and a full address (like `121 N La Salle St, Chicago, IL`) and the API will geocode it. If this parameter is provided, all other parameters will be ignored.
+Use `query` and a full address (like `query=121 N La Salle St, Chicago, IL`) and the API will geocode it.
 
 #### Group 3 - Address parts 
 Provide `address`, `city`, and `state` parameters. `zipcode` is optional. If `city` is empty or not provided, the API will assume `Chicago`. If `state` is empty or not provided, the API will assume `IL` (Illinois). 
 
 #### Group 4 - Coordinate
-`lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded. 
+`lat` (latitude) and `lng` (longitude), in the EPSG 4326 (WGS84) projection. This coordinate will be reverse geocoded to determine the address. 
 
-#### Group 5 - Combination
-You can supply any of the above parameters in combination, however, one complete group is necessary.
+#### Additional datasets
+These optional query parameters will cause the API to grab additional data (this will increase the time response time). The additional options comprise:
+- `get_permits=true` will find building permits with a matching address in the City of Chicago
+- `get_violations=true` will find building violations with a matching address in the City of Chicago
+- `get_incentives=true` will run Incentives Checker
 
 ### Notes
 
