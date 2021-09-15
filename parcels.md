@@ -32,7 +32,7 @@ https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&ra
 
 ````
 /* Get a GeoJSON string of all parcels within 660 feet (1/8th mile) of the given coordinate that are 2-6 unit apartment buildings (which is represented by the property_class of "2-11") */
-https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&property_class=2-11&radius=660&key=XXX
+https://www.chicagocityscape.com/api/parcels.php?lat=41.887214&lng=-87.642826&prop_class=2-11&radius=660&key=XXX
 ````
 
 ````
