@@ -22,6 +22,7 @@ The API will return a GeoJSON dataset of Cook County parcels near or within a sp
 | chicago_owned  | Optional. Returns information about the potential City-owned land status of each parcel in the response. 
 | prop_class     | Optional. Filter: Returns only parcels with the given property class. [Review all the possible property classes](https://www.chicagocityscape.com/guides/propertyclasses.php), used by the Cook County Assessor.
 | zone_class     | Optional. Filter: Returns only parcels in a given comma-separated list of Chicago zoning districts.
+| limit          | Optional. The number of results to return. There's a hard limit of 1,000 results. If not provided, the default limit is 100 results.|
 
 ## Sample API calls
 
