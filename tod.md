@@ -1,6 +1,9 @@
-# Details about the TOD API
+# Details about the Address Snapshot API
+The Address Snapshot API returns most of the data of an Address Snapshot Report on our website.
 
-## TOD API Parameters
+The endpoint is `https://chicagocityscape.com/api/index.php`.
+
+## Address Snapshot API Parameters
 
 The parameters you must provide are grouped. A valid `key` parameter + parameters in Group 1, 2, 3, or 4 are required (Groups 1-4 help us locate the address or property you're seeking, and only one group is required). 
 
