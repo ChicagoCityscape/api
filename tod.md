@@ -1,7 +1,7 @@
 # Details about the Address Snapshot API
 The Address Snapshot API returns most of the data of an Address Snapshot Report on our website.
 
-The endpoint is `https://chicagocityscape.com/api/index.php`.
+The endpoint is `https://chicagocityscape.com/api/index.php?`.
 
 ## Address Snapshot API Parameters
 
