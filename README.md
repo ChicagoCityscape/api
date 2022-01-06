@@ -7,12 +7,13 @@ Using the API requires a `key` which is available to certain members and can be 
 ## 3 Endpoints
 
 ### 1. TOD API 
+
+[Full TOD API documentation](tod.md)
+
 The "TOD API" returns the same information that you get in an [Address Snapshot Report](http://chicagocityscape.com/address.php).
 ````
 https://www.chicagocityscape.com/api/index.php
 ````
-
-See "Details about the TOD API" below to see which parameters are required and which parameters are optional.
 
 #### Sample API calls
 Get a response for an address in Chicago. If the API call doesn't have coordinates, the API will automatically geocode the address. Provide coordinates using `lat` and `lng` parameters (this will also marginally speed up the response).
@@ -26,13 +27,14 @@ https://www.chicagocityscape.com/api/index.php?pin=13364210400000&key=XXX
 ````
 
 ### 2. Parcels API
+
+[Full Parcels API documentation](parcels.md).
+
 This API returns a GeoJSON dataset of Cook County parcels within a radius (in feet) of a WGS84 geographic coordinate, inside a bounding box passed to the API as a GeoJSON polygon, or inside or within a radius (in feet) of one of our thousands of Place Snapshots (using the `slug` parameter). 
 ````
 /* The endpoint URL...*/
 https://www.chicagocityscape.com/api/parcels.php
 ````
-
-[Review the full documentation for the Parcels API](parcels.md).
 
 ### 3. Boundaries API 
 Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
