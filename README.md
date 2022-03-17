@@ -40,3 +40,7 @@ https://www.chicagocityscape.com/api/parcels.php
 
 ### 3. Boundaries API 
 Visit [Boundaries (Places)](https://github.com/ChicagoCityscape/api/blob/master/boundaries.md) for details on how to get GeoJSON for wards, community areas, neighborhoods, Chicago Public Schools attendance areas, and other kinds of boundaries.
+
+
+## Troubleshooting
+- If you are using cURL to access the API and you are receiving results but unexpected results, try sending the parameters as a JSON payload, or "-d" properties, rather then encoding them in the URL.
