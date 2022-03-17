@@ -120,118 +120,55 @@ This will return valid GeoJSON, with a single geometry representing the location
             }
         ],
         "pedestrian_street": null,
-        "boundaries": {
-            "ward": [
-                {
-                    "type": "ward",
-                    "name": "42",
-                    "metadata": "BRENDAN REILLY",
-                    "slug": "ward-42"
-                }
-            ],
-            "communityarea": [
-                {
-                    "type": "communityarea",
-                    "name": "LOOP",
-                    "metadata": "32",
-                    "slug": "communityarea-loop"
-                }
-            ],
-            "neighborhood": [
-                {
-                    "type": "neighborhood",
-                    "name": "The Loop",
-                    "metadata": "",
-                    "slug": "neighborhood-the-loop"
-                }
-            ],
-            "zip": [
-                {
-                    "type": "zip",
-                    "name": "60601",
-                    "metadata": "",
-                    "slug": "zip-60601"
-                }
-            ],
-            "nationalregister": [
-                {
-                    "type": "nationalregister",
-                    "name": "Michigan  Wacker Historic District",
-                    "metadata": "",
-                    "slug": "nationalregister-38"
-                }
-            ],
-            "township": [
-                {
-                    "type": "township",
-                    "name": "South",
-                    "metadata": "10",
-                    "slug": "township-south-10"
-                }
-            ],
-            "chipolicebeat": [
-                {
-                    "type": "chipolicebeat",
-                    "name": "District 01, Beat 0114",
-                    "metadata": "01",
-                    "slug": "chipolicebeat-district-01-beat-0114"
-                }
-            ],
-            "chipolicedistrict": [
-                {
-                    "type": "chipolicedistrict",
-                    "name": "District 1 - Central",
-                    "metadata": "Robert Klich",
-                    "slug": "chipolicedistrict-1"
-                }
-            ],
-            "cookcountydistrict": [
-                {
-                    "type": "cookcountydistrict",
-                    "name": "2",
-                    "metadata": "Robert Steele",
-                    "slug": "cookcountydistrict-2"
-                }
-            ],
-            "mcpier": [
-                {
-                    "type": "mcpier",
-                    "name": "Lake Michigan Area boundary",
-                    "metadata": "",
-                    "slug": "mcpier-lake-michigan-area"
-                }
-            ],
-            "illinoishouse": [
-                {
-                    "type": "illinoishouse",
-                    "name": "Kenneth Dunkin (5th)",
-                    "metadata": "5",
-                    "slug": "illinoishouse-5"
-                }
-            ],
-            "illinoissenate": [
-                {
-                    "type": "illinoissenate",
-                    "name": "Mattie Hunter (3rd)",
-                    "metadata": "3",
-                    "slug": "illinoissenate-3"
-                }
-            ],
-            "cpsattendance": [
-                {
-                    "type": "cpsattendance",
-                    "name": "Wells Hs (HS)",
-                    "metadata": "9, 10, 11, 12",
-                    "slug": "cpsattendance-wells-hs-hs"
+        "boundaries": [
+              {
+                "name": "Illinois Center",
+                "type": "custom",
+                "metadata": null,
+                "slug": "custom-illinois-center",
+                "extra_info_jsonb": null,
+                "area": "1401324.650069318",
+                "area_intersection": "0"
+              },
+              {
+                "name": "42-40",
+                "type": "precinct",
+                "metadata": "chicago",
+                "slug": "precinct-chicago-42-40",
+                "extra_info_jsonb": null,
+                "area": "1650009.2205570592",
+                "area_intersection": "0"
+              },
+              {
+                "name": "Loop",
+                "type": "communityarea",
+                "metadata": "32",
+                "slug": "communityarea-loop",
+                "extra_info_jsonb": {
+                  "mred_number": 8032
                 },
-                {
-                    "type": "cpsattendance",
-                    "name": "Ogden (ES)",
-                    "metadata": "K, 1, 2, 3, 4, 5, 6, 7, 8",
-                    "slug": "cpsattendance-ogden-es"
-                }
-            ]
-        },
+                "area": "46335565.45867195",
+                "area_intersection": "0"
+              },
+              {
+                "name": "42nd Ward, Alder Brendan Reilly",
+                "type": "ward",
+                "metadata": "42",
+                "slug": "ward-42",
+                "extra_info_jsonb": null,
+                "area": "71482506.26507778",
+                "area_intersection": "0"
+              },
+              {
+                "name": "Central Business District (CBD)",
+                "type": "custom",
+                "metadata": "Boundary from the Chicago Municipal Code, 9-4-010 Definitions.",
+                "slug": "custom-chicago-central-business-district",
+                "extra_info_jsonb": null,
+                "area": "112280617.71752033",
+                "area_intersection": "0"
+              }
+        ],
         "mpea": [
             "Lake Michigan Area boundary"
         ],
