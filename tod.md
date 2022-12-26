@@ -24,6 +24,7 @@ These optional query parameters will cause the API to grab additional data (this
 - `get_permits=true` will look for building permits with a matching address in the City of Chicago; only works if an `address` is provided, but the API does not verify if that address is in Chicago before checking
 - `get_violations=true` will look for building permits with a matching address in the City of Chicago; only works if an `address` is provided, but the API does not verify if that address is in Chicago before checking
 - `get_incentives=true` will run Incentives Checker
+- `skip_boundaries=true` will skip checking for Surrounding Places (ZIP code, ward, community area, custom boundaries, etc.)
 
 ## Notes
 
