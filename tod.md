@@ -284,10 +284,3 @@ This will return valid GeoJSON, with a single geometry representing the location
     }
 }
 ````
-
-The API response was updated in fall 2017 to include our financial incentives, described in detail in [this issue](https://github.com/ChicagoCityscape/api/issues/1). On the Address Snapshot these are only shown to Pro members. Financial incentives are:
-- Chicago Housing Authority (CHA) opportunity areas
-- Neighborhood Opportunity Fund (NOF) investment zones
-- Retail Thrive Zones (related to NOF)
-- Downtown expansion area
-- Micro Market Recovery Program (MMRP)
